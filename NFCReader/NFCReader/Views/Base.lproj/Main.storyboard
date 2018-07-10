@@ -14,115 +14,317 @@
         <scene sceneID="kD1-aR-pZC">
             <objects>
                 <navigationController id="7Ep-y9-WtS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="utj-pB-Rsx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="utj-pB-Rsx">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99215686274509807" green="0.86274509803921573" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.27058823529411763" green="0.61176470588235299" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="qPY-sK-c0w" kind="relationship" relationship="rootViewController" id="pzN-12-206"/>
+                        <segue destination="CuQ-MX-IJb" kind="relationship" relationship="rootViewController" id="RqM-Nb-agi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oX6-wX-roa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="113"/>
+            <point key="canvasLocation" x="-1140" y="113"/>
         </scene>
         <!--POC NFC-->
-        <scene sceneID="mEX-rP-w7z">
+        <scene sceneID="yMt-B0-FmN">
             <objects>
-                <viewController id="qPY-sK-c0w" customClass="NFCReaderViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xv0-uM-PqV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="CuQ-MX-IJb" customClass="NFCReaderViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNf-SK-Yxf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAs-f9-6u7">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0u-Wv-tEO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-S3-KYk">
-                                        <rect key="frame" x="8" y="8" width="84" height="84"/>
-                                        <state key="normal" title="Button" image="nfc"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-6H-hBi">
+                                        <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagar con NFC" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-Iz-zjz">
+                                                <rect key="frame" x="4" y="57.5" width="92" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reader" translatesAutoresizingMaskIntoConstraints="NO" id="9a4-cf-nwc">
+                                                <rect key="frame" x="22.5" y="2.5" width="55" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="9EK-l4-JTV"/>
+                                                    <constraint firstAttribute="width" constant="55" id="vJI-t1-43t"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="z4f-Iz-zjz" secondAttribute="bottom" constant="4" id="90i-pz-er9"/>
+                                            <constraint firstItem="9a4-cf-nwc" firstAttribute="centerX" secondItem="ajg-6H-hBi" secondAttribute="centerX" id="AFw-oe-HjO"/>
+                                            <constraint firstItem="z4f-Iz-zjz" firstAttribute="leading" secondItem="ajg-6H-hBi" secondAttribute="leading" constant="4" id="IY9-rk-l2l"/>
+                                            <constraint firstAttribute="width" constant="100" id="KJx-bL-gzh"/>
+                                            <constraint firstAttribute="trailing" secondItem="z4f-Iz-zjz" secondAttribute="trailing" constant="4" id="NN3-wf-hTf"/>
+                                            <constraint firstItem="9a4-cf-nwc" firstAttribute="top" secondItem="ajg-6H-hBi" secondAttribute="top" priority="250" constant="20" symbolic="YES" id="iO0-Ni-1Sp"/>
+                                            <constraint firstItem="z4f-Iz-zjz" firstAttribute="top" secondItem="9a4-cf-nwc" secondAttribute="bottom" id="lqf-Z7-d6S"/>
+                                            <constraint firstAttribute="height" constant="100" id="qmg-gN-b5B"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="startNFCReadingAction:" destination="qPY-sK-c0w" eventType="touchUpInside" id="e0d-vL-lM7"/>
+                                            <outletCollection property="gestureRecognizers" destination="BDT-Eh-YNv" appends="YES" id="WwT-bM-ygv"/>
                                         </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="2E1-eF-eoJ"/>
-                                    <constraint firstAttribute="height" constant="100" id="DiT-HF-TfZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="fkz-S3-KYk" secondAttribute="bottom" constant="8" id="HIg-9E-3mJ"/>
-                                    <constraint firstItem="fkz-S3-KYk" firstAttribute="leading" secondItem="KAs-f9-6u7" secondAttribute="leading" constant="8" id="Pss-Rj-oAo"/>
-                                    <constraint firstAttribute="trailing" secondItem="fkz-S3-KYk" secondAttribute="trailing" constant="8" id="bjJ-tI-zv5"/>
-                                    <constraint firstItem="fkz-S3-KYk" firstAttribute="top" secondItem="KAs-f9-6u7" secondAttribute="top" constant="8" id="j27-wT-NAj"/>
+                                    <constraint firstItem="ajg-6H-hBi" firstAttribute="leading" secondItem="e0u-Wv-tEO" secondAttribute="leading" constant="16" id="0Uz-Au-iVW"/>
+                                    <constraint firstItem="ajg-6H-hBi" firstAttribute="centerY" secondItem="e0u-Wv-tEO" secondAttribute="centerY" id="Xby-MJ-W44"/>
+                                    <constraint firstAttribute="height" constant="140" id="rKy-bY-viT"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para comezar a pagar apretá el botón!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dM-U3-JNH">
-                                <rect key="frame" x="20" y="403" width="335" height="51.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7dM-U3-JNH" firstAttribute="top" secondItem="KAs-f9-6u7" secondAttribute="bottom" constant="20" id="ILp-3V-uSe"/>
-                            <constraint firstItem="7dM-U3-JNH" firstAttribute="leading" secondItem="xv0-uM-PqV" secondAttribute="leading" constant="20" id="JaR-hE-Tqf"/>
-                            <constraint firstItem="KAs-f9-6u7" firstAttribute="centerY" secondItem="xv0-uM-PqV" secondAttribute="centerY" id="K31-Ca-EYj"/>
-                            <constraint firstAttribute="trailing" secondItem="7dM-U3-JNH" secondAttribute="trailing" constant="20" id="d1q-Td-3e8"/>
-                            <constraint firstItem="KAs-f9-6u7" firstAttribute="centerX" secondItem="xv0-uM-PqV" secondAttribute="centerX" id="mEg-Ow-Iei"/>
-                            <constraint firstItem="7dM-U3-JNH" firstAttribute="centerX" secondItem="xv0-uM-PqV" secondAttribute="centerX" id="vmM-eb-DHZ"/>
+                            <constraint firstItem="e0u-Wv-tEO" firstAttribute="leading" secondItem="QhW-JV-n43" secondAttribute="leading" id="KDU-7g-nZg"/>
+                            <constraint firstItem="QhW-JV-n43" firstAttribute="trailing" secondItem="e0u-Wv-tEO" secondAttribute="trailing" id="VXz-70-Jy3"/>
+                            <constraint firstItem="e0u-Wv-tEO" firstAttribute="top" secondItem="QhW-JV-n43" secondAttribute="top" id="deH-9E-Xol"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QrY-xC-fS1"/>
+                        <viewLayoutGuide key="safeArea" id="QhW-JV-n43"/>
                     </view>
-                    <navigationItem key="navigationItem" title="POC NFC" id="y1C-40-fTj"/>
+                    <navigationItem key="navigationItem" title="POC NFC" id="798-5M-HTc"/>
                     <connections>
-                        <outlet property="nfcButton" destination="fkz-S3-KYk" id="fMP-sK-UES"/>
-                        <segue destination="Ale-A5-xST" kind="show" id="m81-Qs-ZRN"/>
-                        <segue destination="p5l-Ca-C9v" kind="show" id="TCw-Yg-SS1"/>
+                        <segue destination="Ale-A5-xST" kind="show" identifier="addAmount" id="1Eb-H7-MsB"/>
+                        <segue destination="p5l-Ca-C9v" kind="show" identifier="confirmPayment" id="Kr4-20-PHj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EsL-hd-ZTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FD5-10-gsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BDT-Eh-YNv" userLabel="OpenNFCReader">
+                    <connections>
+                        <action selector="startNFCReadingAction:" destination="CuQ-MX-IJb" id="nNx-Mv-JTp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="332" y="113"/>
+            <point key="canvasLocation" x="-399.19999999999999" y="113.79310344827587"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirmation View Controller-->
         <scene sceneID="XSy-te-fi4">
             <objects>
-                <viewController id="p5l-Ca-C9v" sceneMemberID="viewController">
+                <viewController id="p5l-Ca-C9v" customClass="ConfirmationViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hj7-ac-Upa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vas a Pagar al vendedor: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-cw-nJy">
+                                <rect key="frame" x="0.0" y="32" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="p98-ys-DCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUr-02-RmO">
+                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.27058823529411763" green="0.61176470588235299" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Cm9-L0-ehg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Confirmar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirm:" destination="p5l-Ca-C9v" eventType="touchUpInside" id="zfl-N1-qbU"/>
+                                </connections>
+                            </button>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUb-dy-ALD" customClass="MoneyTextField" customModule="NFCReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="375" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="uwT-HC-EgK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="numberColor">
+                                        <color key="value" red="0.27058823529999998" green="0.61176470589999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="currencySymbolColor">
+                                        <color key="value" red="0.27058823529999998" green="0.61176470589999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5As-iZ-Ee3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbJ-oM-pqw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="0.72942341549295775" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-MZ-YZd" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="167.5" y="281.5" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0UQ-3C-FHE"/>
+                                            <constraint firstAttribute="height" constant="40" id="DWy-Fa-18k"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballClipRotate"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.27058823529999998" green="0.61176470589999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estamos procesando tu pago..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-e0-ua2">
+                                        <rect key="frame" x="16" y="337.5" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Dpp-e0-ua2" secondAttribute="trailing" constant="16" id="D7H-HI-BdO"/>
+                                    <constraint firstAttribute="bottom" secondItem="HbJ-oM-pqw" secondAttribute="bottom" id="I1X-EX-wUz"/>
+                                    <constraint firstItem="HbJ-oM-pqw" firstAttribute="leading" secondItem="5As-iZ-Ee3" secondAttribute="leading" id="TEK-K4-Wa2"/>
+                                    <constraint firstItem="Dpp-e0-ua2" firstAttribute="leading" secondItem="5As-iZ-Ee3" secondAttribute="leading" constant="16" id="Ups-YA-2Ow"/>
+                                    <constraint firstAttribute="trailing" secondItem="HbJ-oM-pqw" secondAttribute="trailing" id="bfM-si-O3s"/>
+                                    <constraint firstItem="kLF-MZ-YZd" firstAttribute="centerY" secondItem="5As-iZ-Ee3" secondAttribute="centerY" id="cZ4-Nf-e1P"/>
+                                    <constraint firstItem="kLF-MZ-YZd" firstAttribute="centerX" secondItem="5As-iZ-Ee3" secondAttribute="centerX" id="h3N-YR-YLB"/>
+                                    <constraint firstItem="HbJ-oM-pqw" firstAttribute="top" secondItem="5As-iZ-Ee3" secondAttribute="top" id="uCA-jt-zcr"/>
+                                    <constraint firstItem="Dpp-e0-ua2" firstAttribute="top" secondItem="kLF-MZ-YZd" secondAttribute="bottom" constant="16" id="yDI-3g-UXM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5As-iZ-Ee3" firstAttribute="leading" secondItem="hj7-ac-Upa" secondAttribute="leading" id="6WC-FF-ees"/>
+                            <constraint firstItem="atR-cw-nJy" firstAttribute="leading" secondItem="Zx0-wJ-mg8" secondAttribute="leading" id="9bs-vK-GOo"/>
+                            <constraint firstItem="5As-iZ-Ee3" firstAttribute="top" secondItem="hj7-ac-Upa" secondAttribute="top" id="CVr-JT-UcR"/>
+                            <constraint firstItem="Zx0-wJ-mg8" firstAttribute="trailing" secondItem="atR-cw-nJy" secondAttribute="trailing" id="DKk-4h-0pj"/>
+                            <constraint firstItem="jUr-02-RmO" firstAttribute="leading" secondItem="Zx0-wJ-mg8" secondAttribute="leading" id="UrS-GH-W9Z"/>
+                            <constraint firstItem="TUb-dy-ALD" firstAttribute="top" secondItem="atR-cw-nJy" secondAttribute="bottom" constant="48" id="Wji-D0-SdJ"/>
+                            <constraint firstItem="jUr-02-RmO" firstAttribute="trailing" secondItem="Zx0-wJ-mg8" secondAttribute="trailing" id="X1y-Jc-amc"/>
+                            <constraint firstItem="TUb-dy-ALD" firstAttribute="leading" secondItem="Zx0-wJ-mg8" secondAttribute="leading" id="a1H-n7-0yp"/>
+                            <constraint firstItem="jUr-02-RmO" firstAttribute="bottom" secondItem="Zx0-wJ-mg8" secondAttribute="bottom" id="fTi-jS-Q9X"/>
+                            <constraint firstItem="Zx0-wJ-mg8" firstAttribute="trailing" secondItem="TUb-dy-ALD" secondAttribute="trailing" id="isj-rc-Gki"/>
+                            <constraint firstAttribute="bottom" secondItem="5As-iZ-Ee3" secondAttribute="bottom" id="lhQ-Dc-zMA"/>
+                            <constraint firstItem="atR-cw-nJy" firstAttribute="top" secondItem="Zx0-wJ-mg8" secondAttribute="top" constant="32" id="nso-dg-lG9"/>
+                            <constraint firstAttribute="trailing" secondItem="5As-iZ-Ee3" secondAttribute="trailing" id="qmM-Fs-51k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zx0-wJ-mg8"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="kLF-MZ-YZd" id="ZJT-LQ-PaM"/>
+                        <outlet property="activityIndicatorContainer" destination="5As-iZ-Ee3" id="aBD-1w-0wd"/>
+                        <outlet property="amountTextField" destination="TUb-dy-ALD" id="wy6-xC-e3R"/>
+                        <outlet property="confirmButton" destination="jUr-02-RmO" id="js8-QQ-gzF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbk-Yq-zmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="674"/>
+            <point key="canvasLocation" x="1524" y="673.31334332833592"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Amount View Controller-->
         <scene sceneID="xqM-R1-5CQ">
             <objects>
-                <viewController id="Ale-A5-xST" sceneMemberID="viewController">
+                <viewController id="Ale-A5-xST" customClass="AddAmountViewController" customModule="NFCReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qcA-9a-SYG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rx-ph-D8h">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa el monto que deseas pagar al vendedor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4td-TR-q91">
+                                        <rect key="frame" x="16" y="32" width="343" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-rs-4qU" customClass="MoneyTextField" customModule="NFCReader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="137.5" width="375" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="2cF-cW-dnu"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="numberColor">
+                                                <color key="value" red="0.27058823529999998" green="0.61176470589999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="currencySymbolColor">
+                                                <color key="value" red="0.27058823529999998" green="0.61176470589999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4td-TR-q91" firstAttribute="top" secondItem="7rx-ph-D8h" secondAttribute="top" constant="32" id="CFH-8D-B1j"/>
+                                    <constraint firstItem="4td-TR-q91" firstAttribute="leading" secondItem="7rx-ph-D8h" secondAttribute="leading" constant="16" id="Hop-Ey-Nna"/>
+                                    <constraint firstAttribute="trailing" secondItem="4td-TR-q91" secondAttribute="trailing" constant="16" id="ITK-sM-exn"/>
+                                    <constraint firstItem="2dE-rs-4qU" firstAttribute="leading" secondItem="7rx-ph-D8h" secondAttribute="leading" id="g4n-b8-QWO"/>
+                                    <constraint firstAttribute="trailing" secondItem="2dE-rs-4qU" secondAttribute="trailing" id="hPS-WL-Jph"/>
+                                    <constraint firstItem="2dE-rs-4qU" firstAttribute="top" secondItem="4td-TR-q91" secondAttribute="bottom" constant="48" id="rHx-y9-MVs"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="bSV-XO-0lb">
+                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-RF-9jE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <color key="backgroundColor" red="0.27058823529411763" green="0.61176470588235299" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Pagar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="payAction:" destination="Ale-A5-xST" eventType="touchUpInside" id="DKg-sR-7wZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lVp-RF-9oL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7rx-ph-D8h" firstAttribute="top" secondItem="lsp-dT-g95" secondAttribute="top" id="Lso-G1-Mkd"/>
+                            <constraint firstItem="7rx-ph-D8h" firstAttribute="leading" secondItem="lsp-dT-g95" secondAttribute="leading" id="PCh-5i-vgT"/>
+                            <constraint firstItem="bSV-XO-0lb" firstAttribute="top" secondItem="7rx-ph-D8h" secondAttribute="bottom" id="fNR-mr-87Q"/>
+                            <constraint firstItem="lsp-dT-g95" firstAttribute="trailing" secondItem="7rx-ph-D8h" secondAttribute="trailing" id="hBQ-lD-Wg2"/>
+                            <constraint firstItem="bSV-XO-0lb" firstAttribute="trailing" secondItem="lsp-dT-g95" secondAttribute="trailing" id="lnI-Z4-GGb"/>
+                            <constraint firstItem="bSV-XO-0lb" firstAttribute="leading" secondItem="lsp-dT-g95" secondAttribute="leading" id="n8J-eB-Rmm"/>
+                            <constraint firstItem="bSV-XO-0lb" firstAttribute="bottom" secondItem="lsp-dT-g95" secondAttribute="bottom" id="tSR-Xn-UsT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lsp-dT-g95"/>
                     </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="2dE-rs-4qU" id="wRc-zN-pIx"/>
+                        <outlet property="bottomConstraintStackView" destination="tSR-Xn-UsT" id="vJ4-mS-3Mo"/>
+                        <segue destination="p5l-Ca-C9v" kind="show" identifier="confirmAmount" id="8OP-UR-QnQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCk-pC-llK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-283"/>
+            <point key="canvasLocation" x="1524" y="-283.80809595202402"/>
         </scene>
     </scenes>
     <resources>
-        <image name="nfc" width="100" height="100"/>
+        <image name="Reader" width="1200" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Kr4-20-PHj"/>
+    </inferredMetricsTieBreakers>
 </document>

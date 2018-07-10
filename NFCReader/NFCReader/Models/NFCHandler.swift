@@ -16,34 +16,32 @@ protocol NFCHandlerDelegate {
 
 final class NFCHandler: NSObject {
     
-    var delegate: NFCHandlerDelegate?
     private var nfcSession: NFCNDEFReaderSession!
-
+    var delegate: NFCHandlerDelegate?
     
-    init(invalidateAfterFirstRead: Bool) {
-        super.init()
-        self.nfcSession = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: invalidateAfterFirstRead)
-    }
-    
-    func startNFCScan() {
+    func startNFCScan(invalidateAfterFirstRead: Bool, userMessage: String) {
+        resetSession(invalidateAfterFirstRead: invalidateAfterFirstRead, userMessage: userMessage)
         nfcSession.begin()
     }
     
     func stopNFCScan() {
         nfcSession.invalidate()
     }
+    
+    func resetSession(invalidateAfterFirstRead: Bool, userMessage: String) {
+        nfcSession = NFCNDEFReaderSession(delegate: self, queue:  DispatchQueue.main, invalidateAfterFirstRead: invalidateAfterFirstRead)
+        nfcSession.alertMessage = userMessage
+    }
 }
 
 extension NFCHandler : NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print("NFC-Session invalidated: \(error.localizedDescription)")
+        print("NFCReader - Error: \(error.localizedDescription)")
         delegate?.didInvalidate(error)
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        print("Messages read: (\(messages.count))")
-        
         var response = [[NFCMessage]]()
         
         for message in messages {

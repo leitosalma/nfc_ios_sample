@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CCB17ADFB628D4341944A40 /* Pods_NFCReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C9D923392A450F88AC51BA /* Pods_NFCReader.framework */; };
 		F80AA80820E55EB700D01515 /* NFCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80AA80720E55EB700D01515 /* NFCMessage.swift */; };
 		F80AA80A20E6C4FD00D01515 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80AA80920E6C4FD00D01515 /* NFCReaderViewController.swift */; };
 		F80AA80C20E9E79C00D01515 /* NFCPaymentParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80AA80B20E9E79C00D01515 /* NFCPaymentParameters.swift */; };
+		F87D76E820EA955A0073DA25 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D76E720EA955A0073DA25 /* BorderView.swift */; };
+		F87D76F120EA9EA60073DA25 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D76F020EA9EA60073DA25 /* ConfirmationViewController.swift */; };
+		F87D76F320EA9EF00073DA25 /* AddAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D76F220EA9EF00073DA25 /* AddAmountViewController.swift */; };
+		F8E4DF2420EAC49700308A80 /* MoneyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4DF2320EAC49700308A80 /* MoneyTextField.swift */; };
 		F8F12E0320E3BD4A00994B07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F12E0220E3BD4A00994B07 /* AppDelegate.swift */; };
 		F8F12E0820E3BD4A00994B07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8F12E0620E3BD4A00994B07 /* Main.storyboard */; };
 		F8F12E0A20E3BD4B00994B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F12E0920E3BD4B00994B07 /* Assets.xcassets */; };
@@ -18,9 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317DFC9790C489BF94A61841 /* Pods-NFCReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NFCReader/Pods-NFCReader.release.xcconfig"; sourceTree = "<group>"; };
+		A1C9D923392A450F88AC51BA /* Pods_NFCReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFCReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A01F098B99B482494F5324 /* Pods-NFCReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NFCReader/Pods-NFCReader.debug.xcconfig"; sourceTree = "<group>"; };
 		F80AA80720E55EB700D01515 /* NFCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessage.swift; sourceTree = "<group>"; };
 		F80AA80920E6C4FD00D01515 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		F80AA80B20E9E79C00D01515 /* NFCPaymentParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCPaymentParameters.swift; sourceTree = "<group>"; };
+		F80AA80D20EA72A300D01515 /* NFCReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFCReader.entitlements; sourceTree = "<group>"; };
+		F87D76E720EA955A0073DA25 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		F87D76F020EA9EA60073DA25 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		F87D76F220EA9EF00073DA25 /* AddAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAmountViewController.swift; sourceTree = "<group>"; };
+		F8E4DF2320EAC49700308A80 /* MoneyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTextField.swift; sourceTree = "<group>"; };
 		F8F12DFF20E3BD4A00994B07 /* NFCReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFCReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F12E0220E3BD4A00994B07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8F12E0720E3BD4A00994B07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,17 +48,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CCB17ADFB628D4341944A40 /* Pods_NFCReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E36176711A3862294544EB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1C9D923392A450F88AC51BA /* Pods_NFCReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8976DED6D99917651ABDE5F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1A01F098B99B482494F5324 /* Pods-NFCReader.debug.xcconfig */,
+				317DFC9790C489BF94A61841 /* Pods-NFCReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F87D76E620EA95410073DA25 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				F8E4DF2320EAC49700308A80 /* MoneyTextField.swift */,
+				F87D76E720EA955A0073DA25 /* BorderView.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
 		F8F12DF620E3BD4A00994B07 = {
 			isa = PBXGroup;
 			children = (
 				F8F12E0120E3BD4A00994B07 /* NFCReader */,
 				F8F12E0020E3BD4A00994B07 /* Products */,
+				8976DED6D99917651ABDE5F1 /* Pods */,
+				4E36176711A3862294544EB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +102,8 @@
 		F8F12E0120E3BD4A00994B07 /* NFCReader */ = {
 			isa = PBXGroup;
 			children = (
+				F87D76E620EA95410073DA25 /* CustomControls */,
+				F80AA80D20EA72A300D01515 /* NFCReader.entitlements */,
 				F8F12E1520E3FDDC00994B07 /* Models */,
 				F8F12E1720E3FDED00994B07 /* ViewControllers */,
 				F8F12E1420E3FDD100994B07 /* Views */,
@@ -93,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				F80AA80920E6C4FD00D01515 /* NFCReaderViewController.swift */,
+				F87D76F020EA9EA60073DA25 /* ConfirmationViewController.swift */,
+				F87D76F220EA9EF00073DA25 /* AddAmountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8F12E1120E3BD4B00994B07 /* Build configuration list for PBXNativeTarget "NFCReader" */;
 			buildPhases = (
+				DECA47AE6B02CF58DE7EA49C /* [CP] Check Pods Manifest.lock */,
 				F8F12DFB20E3BD4A00994B07 /* Sources */,
 				F8F12DFC20E3BD4A00994B07 /* Frameworks */,
 				F8F12DFD20E3BD4A00994B07 /* Resources */,
+				0E45CCA955ACA161F3D97100 /* [CP] Embed Pods Frameworks */,
+				AF9ABCCE55BA8FB0EDA9D273 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +178,11 @@
 				TargetAttributes = {
 					F8F12DFE20E3BD4A00994B07 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -163,6 +217,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E45CCA955ACA161F3D97100 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NFCReader/Pods-NFCReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NFCReader/Pods-NFCReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF9ABCCE55BA8FB0EDA9D273 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NFCReader/Pods-NFCReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DECA47AE6B02CF58DE7EA49C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NFCReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8F12DFB20E3BD4A00994B07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -172,6 +280,10 @@
 				F80AA80820E55EB700D01515 /* NFCMessage.swift in Sources */,
 				F80AA80A20E6C4FD00D01515 /* NFCReaderViewController.swift in Sources */,
 				F8F12E0320E3BD4A00994B07 /* AppDelegate.swift in Sources */,
+				F87D76E820EA955A0073DA25 /* BorderView.swift in Sources */,
+				F87D76F320EA9EF00073DA25 /* AddAmountViewController.swift in Sources */,
+				F8E4DF2420EAC49700308A80 /* MoneyTextField.swift in Sources */,
+				F87D76F120EA9EA60073DA25 /* ConfirmationViewController.swift in Sources */,
 				F80AA80C20E9E79C00D01515 /* NFCPaymentParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,8 +426,10 @@
 		};
 		F8F12E1220E3BD4B00994B07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1A01F098B99B482494F5324 /* Pods-NFCReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCReader/NFCReader.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T9VUHG6RU2;
 				INFOPLIST_FILE = NFCReader/Info.plist;
@@ -334,8 +448,10 @@
 		};
 		F8F12E1320E3BD4B00994B07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 317DFC9790C489BF94A61841 /* Pods-NFCReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCReader/NFCReader.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T9VUHG6RU2;
 				INFOPLIST_FILE = NFCReader/Info.plist;

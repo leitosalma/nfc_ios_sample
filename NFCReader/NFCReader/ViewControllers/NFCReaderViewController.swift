@@ -7,36 +7,58 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class NFCReaderViewController: UIViewController {
-   
     @IBOutlet weak var nfcButton: UIButton!
+    var parametersToSend: NFCPaymentParameters?
     
     lazy var nfcHandler: NFCHandler = {
-        let handler = NFCHandler(invalidateAfterFirstRead: true)
+        let handler = NFCHandler()
         handler.delegate = self
         return handler
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     @IBAction func startNFCReadingAction(_ sender: Any) {
-        nfcHandler.startNFCScan()
+       startNFCReading()
+    }
+    
+    func startNFCReading() {
+        nfcHandler.startNFCScan(invalidateAfterFirstRead: true, userMessage: "Acercá tu teléfono al del vendedor para terminar la transacción")
     }
     
     func processMessages(_ messages: [NFCMessage]) {
-        
-        //With Amount
-        // Sample URL: melinfc://processNFCPayment?userId=999&amount=20,80
-        
-        //Without amount
-        // Sample URL: melinfc://processNFCPayment?userId=999
-        
-        if let messageToProcess = messages.first, let mpUrl = messageToProcess.payload {
-        
+        if let messageToProcess = messages.first, let mpUrl = messageToProcess.payload, let url = URL(string: mpUrl), let nfcParameters = NFCPaymentParameters(fromUrl: url) {
+            
+            parametersToSend = nfcParameters
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                if nfcParameters.amount > 0 {
+                    self.performSegue(withIdentifier: "confirmPayment", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "addAmount", sender: self)
+                }
+            }
+            
+        } else {
+            print("Error parsing the url")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "confirmPayment", let vc = segue.destination as? ConfirmationViewController {
+            vc.parametersToShow = parametersToSend
+        } else if segue.identifier == "addAmount", let vc = segue.destination as? AddAmountViewController {
+            vc.parametersToShow = parametersToSend
         }
     }
 }

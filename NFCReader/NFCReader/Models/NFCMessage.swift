@@ -63,7 +63,7 @@ struct NFCMessage {
     
     init(_ message: NFCNDEFPayload) {
         self.tnf = message.typeNameFormat.toString()
-        self.payload = String(data: message.payload, encoding: .utf8)
+        self.payload = String(data: message.payload, encoding: .utf8)?.replacingOccurrences(of: "\0", with: "")
         self.payloadType = PayloadType(message.type)
         self.payloadId = String(data: message.identifier, encoding: .utf8) ?? ""
     }
