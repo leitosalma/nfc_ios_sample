@@ -144,7 +144,7 @@ open class MoneyTextField: UIControl, UITextViewDelegate, InternalTextViewDelega
     }
 
     fileprivate func setup(_ amount: Double, currency: String) {
-        self.currency = currency
+        self.currency = Locale.current.currencyCode ?? currency
         self.amount = amount
         self.internalTextView.delegate = self
         self.internalTextView.internalTextViewDelegate = self
